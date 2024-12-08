@@ -21,7 +21,6 @@ width = "900"
 height = "700"
 frameborder = "0"
 ></iframe>
-
 ### Univariate Analysis
 Listed below is a univariate analysis plot that describes the total amount of each rating, as in the total amount of reviews for each level rating. What clearly stands out the most is that there are drastically more five star reviews than any other review. This can likely be explained how people would be more likely to take the time to actually review someting (in this case a recipe) in the event that they really enjoy it.
 <iframe
@@ -38,7 +37,6 @@ width = "900"
 height = "700"
 frameborder = "0"
 ></iframe>
-
 ### Aggregate Analysis
 Our third graph is actually an aggregate graph!
 <iframe
@@ -48,15 +46,12 @@ height = "700"
 frameborder = "0"
 ></iframe>
 The significane of this graph is that it can greatly help us understand what it is that makes recipes great! First off, take a look at the point located in the top right corner. That point represents all the recipes that recieved 1/5 ratings. The avearge time of these recipes is very high, at just under 70 minutes, much higher than any of the other data points representing the other rated recipes averages. The 1/5 recipes also have a high calorie total on average, once again higher than all the others. Meanwhile, as you decrease almost linearly in time and total calories, we get the 2/5 and then the 3/5 and then the 4/5. The 5/5 recipes are right there with 4/5 averages so the relationship is not perfectly linear, but this plot heavily suggests that as time and total calories increase, users are more likely to leave a lower review. Another interpretation is that users enjoy recipes that take little time and are low calorie, which logically makes sense as convienet low cal recipes are enjoyable to many.
-
 ## Prediction Question
 A question that I am attempting to predict would be what are the total amount of calories in a recipe? I would know things such as cooking time, number of ingredients, amount of sugar, carbs, and saturated fats. Now, for the information that is found in the nutrition column, it is important to note that it is given in PDV, so I will convert this into total sugar, total carbs, etc. This information is all known before we make our prediction and we can safely base our prediction on these factors.
 This type of prediction would be a regression problem as I am directly attempting to predict a numeric value, the total amount of calories.
-
 # Baseline Model
 Since we roughly established that low calorie recipes are, in general, more popular than high calories ones being able to predict how many calories a recipe is going to have would be an extremely useful model. 
 For a baseline model, three features were utilized from the orignal data frames. Minutes (quantitive), n_ingredients (# of ingredients; quantitive), and rating (ordinal, but still uses numbers). There was no encoding done, although rating is ordinal, becuase we are working with linear regression encoding was not explicity needed. With these three features, the model perfomed relatively poorly. The test set R^2 score was only 0.02 and the MSE was very high at 290,161.90. This suggests that the model does not map the variance effecively at all. The training sets and test sets both have a high MSE, so we are severly underfiting the test and training data alike. Much to be improved
-
 # Final Model
 Thankfully, the final model drastically improved compared to the baseline version. The model was improved by adding additional features: sugar, total_fat, protein, and carbohydrates, which directly relate to the calorie content of recipes, so these features are much more likely to relate to total calories. A GridSearchCV was used to tune hyperparameters for the Lasso regression model, exploring options for regularization strength (alpha), maximum iterations (max_iter), and tolerance (tol). As previously mentioned, Lasso Regression was utilized to shrink the lesser features coeffiecents to smaller numbers, allowing for the prevelent features to have more infulence and limit over fitting. The best hyperparameters identified were alpha=0.0001, max_iter=1000, and tol=0.001, resulting in the final model perfoming very well: Test Set MSE: 1836.07 and R²: 0.99. This is a substantial improvement over the baseline model, which had an MSE of 290,161.90 and an R² of 0.02. By adding the new, relevent features, we experienced drastic improvment in the prediction model. 
 
