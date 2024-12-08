@@ -15,7 +15,6 @@ height = "700"
 frameborder = "0"
 ></iframe>
 This displays the first few rows, containing the recipe ID, the rating given, and other identifying details.
-
 Here is the cleaned recipes DataFrame:
 <iframe
 src = "keys/recipes.html"
@@ -32,7 +31,6 @@ Listed below is a univariate analysis plot that describes the total amount of ea
  height = "600"
  frameborder = "0"
 ></iframe>
-
 ### Bivariate Analysis
 Next up we have an intresting bivariate analysis. This plot describes the the average amount of sugar in each grouped recipe rating. So, for example, if we were to take all of the recipes that recieved a 5/5 rating and found the average grams of sugar (in the nutrition column) of all these recipes and put it on a graph, we would create that column all the way to the right. Do this for the other three ratings and you have the graph you see now! An intresting trend is that the lowest rated recipes (1/5) tend to have the highest average sugar. It is also important to address that all recipes with over 200 g of sugar have been discarded for this graphical representation, in order to eliminate the sway of recipes with copius amounts of sugar.
 <iframe
