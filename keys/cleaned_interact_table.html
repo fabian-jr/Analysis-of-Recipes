@@ -5,30 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataFrame Display</title>
     <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        
+        h2 {
+            color: white; /* White title */
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            font-family: Arial, sans-serif;
             font-size: 12px;
+            background-color: white; /* Table with white background */
         }
+
         th, td {
             padding: 8px;
             text-align: left;
             border: 1px solid #ddd;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
+
         tr:hover {
             background-color: #f1f1f1;
+        }
+
+        /* Styling the container to center the content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-    <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+    <div class="container">
         <h2>Cleaned Reviews DataFrame</h2>
         <table>
             <thead>
