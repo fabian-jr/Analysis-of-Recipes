@@ -1,4 +1,4 @@
-# Analysis of Recipes
+# An Investigation Into What Makes Recipes GREAT
 University of Michigan EECS398 Portfolio Analysis
 
 # Introduction
