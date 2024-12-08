@@ -13,8 +13,7 @@ src = "keys/cleaned_interact_table.html"
 width = "900"
 height = "700"
 frameborder = "0"
-></iframe>
-This displays the first few rows, containing the recipe ID, the rating given, and other identifying details.
+></iframe>This displays the first few rows, containing the recipe ID, the rating given, and other identifying details.
 Here is the cleaned recipes DataFrame:
 <iframe
 src = "keys/recipes.html"
