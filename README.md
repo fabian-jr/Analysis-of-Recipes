@@ -8,12 +8,13 @@ The data sets that I will be analyzing are the recipes and ratings data sets. Th
 Getting right too it, we first must clean our data. Starting with the data frame that contains the ratings: we first are going to want to eliminate duplicates in the case that they may occur. Next we are going to normalize our column names with the same naming convention and then finally verify that all ratings are given as an integer on a 1-5 scale (inclusive). Moving on to recipes, there will be much more work done here: first, we are going to want to address the empty values. The most frequent column that contained empty values turned out to be minutes. In order to fill the rows missing 'minutes' (time the recipe takes) we are going to fill in with the median time. The reason the medain was utilzied instead of the mean was due to the presence of many outliers with extremely large cooking times (over 4k minutes, WOAH). The mean gives these outliers much more influence than the median does, so we will work with the mean. For descriptions that are missing, we will fill in simply NA, as we can not draw any conclusions. Next, we will normalize the column names the same way we did for the previous data frames. Finally, we are going to take out recipes that take over two weeks (or exaclty 20160 minutes). This will get rid of some large outliers that are not crucial to addressing our major question, however becuase there are not many recipes with that large of cooking time, we will take out those few outlying recipes. Below, you can see the first few rows of each cleaned data frame!
 
 Here is the ratings DataFrame cleaned:
-<iframe
-src = "keys/cleaned_interact_table.html"
-width = "900"
-height = "700"
-frameborder = "0"
-></iframe>
+|    user_id |   recipe_id | date       |   rating | review     |
+|-----------:|------------:|:-----------|---------:|:-----------|
+|    1293707 |       40893 | 2011-12-21 |        5 | not_needed |
+|     126440 |       85009 | 2010-02-27 |        5 | not_needed |
+|      57222 |       85009 | 2011-10-01 |        5 | not_needed |
+| 2000192946 |      120345 | 2015-05-10 |        2 | not_needed |
+|     255338 |      134728 | 2008-04-11 |        5 | not_needed |
 
 Here we have the first few rows of a merged data frame as well. This data frame was created by merging the two previous data frames together. This make the analysis we perform later a bit easier by having all the information in one data frame. 
 Here it is:
