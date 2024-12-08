@@ -17,12 +17,17 @@ Here is the ratings DataFrame cleaned:
 |     255338 |      134728 | 2008-04-11 |        5 | First time using liquid smoke in a recipe. Made this as directed. My kids enjoyed this, so we will make this again. Thank you for posting.  
 
 Now, here is the cleaned recipes DataFrame:
-<iframe
- src="keys/cleaned_interact_table.html"
- width="800"
- height="600"
- frameborder="0">
-</iframe>
+<div style="font-family: Arial, sans-serif; font-size: 10px; line-height: 1.4; margin: 0 auto; width: 80%;">
+<pre style="white-space: pre-wrap; word-wrap: break-word;">
+|    user_id |   recipe_id | date       |   rating | review                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|-----------:|------------:|:-----------|---------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    1293707 |       40893 | 2011-12-21 |        5 | So simple, so delicious! Great for chilly fall evening. Should have doubled it ;)<br/><br/>Second time around, forgot the remaining cumin. We usually love cumin, but didn't notice the missing 1/2 teaspoon!                                                                                                                                                                                                                                                                                      |
+|     126440 |       85009 | 2010-02-27 |        5 | I made the Mexican topping and took it to bunko.  Everyone loved it.                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|      57222 |       85009 | 2011-10-01 |        5 | Made the cheddar bacon topping, adding a sprinkling of black pepper. Yum!                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 2000192946 |      120345 | 2015-05-10 |        2 | This recipe was OVERLY too sweet.  I would start out with 1/3 or 1/4 cup of sugar and jsut add on from there.  Just 2 cups was way too much and I had to go back to the grocery store to buy more raspberries because it made so much mix.  Overall, I would but the long narrow box or raspberries.  Its a perfect fit for the recipe plus a little extra.  I was not impressed with this recipe.  It was exceptionally over-sweet.  If you make this simple recipe, MAKE SURE TO ADD LESS SUGAR! |
+|     255338 |      134728 | 2008-04-11 |        5 | First time using liquid smoke in a recipe. Made this as directed. My kids enjoyed this, so we will make this again. Thank you for posting.                                                                                                                                                                                                                                                                                                                                                         |
+</pre>
+</div>
 
 Here we have the first few rows of a merged data frame as well. This data frame was created by merging the two previous data frames together. This make the analysis we perform later a bit easier by having all the information in one data frame. 
 Here it is:
