@@ -16,6 +16,15 @@ Here is the ratings DataFrame cleaned:
 | 2000192946 |      120345 | 2015-05-10 |        2 | not_needed |
 |     255338 |      134728 | 2008-04-11 |        5 | not_needed |
 
+2nd try
+<iframe
+src = "keys/cleaned_interact_table.html"
+width = "900"
+height = "700"
+frameborder = "0"
+></iframe>
+
+
 Here we have the first few rows of a merged data frame as well. This data frame was created by merging the two previous data frames together. This make the analysis we perform later a bit easier by having all the information in one data frame. 
 Here it is:
 |   user_id |   recipe_id | date       |   rating | review                                                                                                                                                                                                                                                                                                                                                                                                                                                          | name                                                           |     id |   minutes |   contributor_id | submitted   | tags                                                                                                                                                                                                                                                                                                                                                                                                    | nutrition                                    |   n_steps | steps                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | description                                                                                                                                                                                                                                                | ingredients                                                                                                                                                                                                                                                               |   n_ingredients |   calories |   total_fat |   sugar |   sodium |   protein |   saturated_fat |   carbohydrates |   sugar_grams |
