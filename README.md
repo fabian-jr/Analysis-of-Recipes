@@ -11,10 +11,10 @@ Here is the Ratings DataFrame cleaned:
 <iframe
 src = "keys/cleaned_interact_table.html"
 width = "900"
-height = "700"
+height = "500"
 frameborder = "0"
 ></iframe>This displays the first few rows, containing the recipe ID, the rating given, and other identifying details.
-Here is the cleaned recipes DataFrame:
+Here is the cleaned recipes DataFrame. The reasoning for the presence of the 'not_needed' values is for formatting convenience; the actual content does not pertain to our investigation question at the moment so we can neglect it at the moment:
 <iframe
 src = "keys/recipes.html"
 width = "900"
@@ -29,12 +29,20 @@ Listed below is a univariate analysis plot that describes the total amount of ea
  height = "600"
  frameborder = "0"
 ></iframe>
+
 ### Bivariate Analysis
 Next up we have an intresting bivariate analysis. This plot describes the the average amount of sugar in each grouped recipe rating. So, for example, if we were to take all of the recipes that recieved a 5/5 rating and found the average grams of sugar (in the nutrition column) of all these recipes and put it on a graph, we would create that column all the way to the right. Do this for the other three ratings and you have the graph you see now! An intresting trend is that the lowest rated recipes (1/5) tend to have the highest average sugar. It is also important to address that all recipes with over 200 g of sugar have been discarded for this graphical representation, in order to eliminate the sway of recipes with copius amounts of sugar.
 <iframe
 src = "keys/p5.html"
+width = "800"
+height = "500"
+frameborder = "0"
+></iframe>
+Next, we are going to take a look at another bivarite analysis. This time, we are going to further dive into the relationship between cooking time and rating. Initially, it can be assumed that a "better" recipe may take longer becuase it can easily be thought that quality food is harder to make and would take longer. However, this graph actaully suggests the opposite. As rating increases, the cooking time on average decreases. This likely has to do with the convenience factor and that people like simpler recipes, especially novice chefs. So, this analysis suggests that low cooking time often can often result in a higher rated recipe.
+<iframe
+src = "keys/p9.html"
 width = "900"
-height = "700"
+height = "600"
 frameborder = "0"
 ></iframe>
 ### Aggregate Analysis
@@ -54,6 +62,13 @@ Since we roughly established that low calorie recipes are, in general, more popu
 For a baseline model, three features were utilized from the orignal data frames. Minutes (quantitive), n_ingredients (# of ingredients; quantitive), and rating (ordinal, but still uses numbers). There was no encoding done, although rating is ordinal, becuase we are working with linear regression encoding was not explicity needed. With these three features, the model perfomed relatively poorly. The test set R^2 score was only 0.02 and the MSE was very high at 290,161.90. This suggests that the model does not map the variance effecively at all. The training sets and test sets both have a high MSE, so we are severly underfiting the test and training data alike. Much to be improved
 # Final Model
 Thankfully, the final model drastically improved compared to the baseline version. The model was improved by adding additional features: sugar, total_fat, protein, and carbohydrates, which directly relate to the calorie content of recipes, so these features are much more likely to relate to total calories. A GridSearchCV was used to tune hyperparameters for the Lasso regression model, exploring options for regularization strength (alpha), maximum iterations (max_iter), and tolerance (tol). As previously mentioned, Lasso Regression was utilized to shrink the lesser features coeffiecents to smaller numbers, allowing for the prevelent features to have more infulence and limit over fitting. The best hyperparameters identified were alpha=0.0001, max_iter=1000, and tol=0.001, resulting in the final model perfoming very well: Test Set MSE: 1836.07 and R²: 0.99. This is a substantial improvement over the baseline model, which had an MSE of 290,161.90 and an R² of 0.02. By adding the new, relevent features, we experienced drastic improvment in the prediction model. 
+<iframe
+src = "keys/p15.html"
+width = "900"
+height = "700"
+frameborder = "0"
+></iframe>
+Listed above, we have the residual plot of our final prediction model. Becuase resdiuals represent the absolute value of the difference between actual value and the predicted value, the lower the residual the better the prediction. As seen in the graph, many points have a low residual value and most points appear to have a residual near zero, indicating a promsing prediction of the calories.
 
 
 
